@@ -28,6 +28,47 @@
   color: #61dafb;
 }
 
+.input {
+  padding:10px;
+  border:" 1px solid white";
+  border-radius: 0.5rem;
+  background: transparent;
+  color:#61dafb;
+}
+
+.movie_card{
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  border-radius: 1rem;
+  padding: 10px;
+  margin: 5px;
+  color:#282c34;
+}
+
+.movie_card img {
+  border-radius: 0.7rem;
+  height: 50vh;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 95%;
+  padding: 10px;
+  justify-content:center;
+  align-items: center;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
