@@ -1,6 +1,7 @@
-import React from "react";
-import logo from "../logo.svg";
-import MovieCard from "./MovieCard";
+import React,{memo} from "react";
+import MovieCard from "../../components/MovieCard";
+import Loader from "../../Ui/loader";
+import BackButton from "../../components/BackButton";
 
 function Movie() {
   const [data, setData] = React.useState([]);
@@ -38,8 +39,8 @@ function Movie() {
 
   return (
     <div className="App-header">
+      <BackButton/>
       <h1>Task2 :-Movie Fetch</h1>
-
       <div>
         <input
           ref={inputRef}
@@ -49,18 +50,21 @@ function Movie() {
         <button
           className="input"
           onClick={() => {
-            apiCall(inputRef?.current?.value);
+            if(inputRef?.current?.value !=="")
+            {
+
+              apiCall(inputRef?.current?.value);
+            }
+            else{
+              alert("search text is required");
+            }
           }}
         >
           Search
         </button>
       </div>
-
       {loading ? (
-        <div>
-          <img src={logo} className="App-logo" alt="loading ..." />
-          <p>Loading ...</p>
-        </div>
+        <Loader/>
       ) : (
         <div className="grid-container">
           {data?.length > 0 || inputRef?.current?.value !== ""
@@ -74,4 +78,4 @@ function Movie() {
   );
 }
 
-export default Movie;
+export default memo(Movie);

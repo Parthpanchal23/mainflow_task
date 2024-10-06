@@ -1,5 +1,6 @@
-import React from "react";
-import logo from "../logo.svg";
+import React,{memo} from "react";
+import logo from "../../assets/logo.svg";
+import BackButton from "../../components/BackButton";
 function Task1() {
   const [count, setCount] = React.useState(0);
   const btnClass = {
@@ -14,6 +15,7 @@ function Task1() {
   };
   return (
       <header className="App-header">
+        <BackButton/>
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Task:-1 Counter App</h1>
         <div style={counterClass}>
@@ -39,4 +41,4 @@ function Task1() {
   );
 }
 
-export default Task1;
+export default memo(Task1);
